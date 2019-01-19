@@ -4,7 +4,10 @@
  * User: VirusS
  * Date: 2019/1/18
  * Time: 8:31
- */?>
+ */
+
+include ("dbconnect.php");
+?>
 
 <!doctype html>
 <html lang="en">
@@ -22,27 +25,38 @@
     <title>VirusS Clothing</title>
 </head>
 <body>
-<!--    Begin Header-->
-    <header>
-        <h1>HELLO WORLD <i class="fa fa-shopping-cart"></i>buy me</h1>
-    </header>
-<!--    End Header-->
-<!--    Begin Main-->
-    <main>
-        <img src="images/bk.jpg" alt="">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">1</div>
-                <div class="col-md-4">2</div>
-                <div class="col-md-4">3</div>
+    <div class="container">
+    <!--    Begin Header-->
+        <?php
+            include ("header.php");
+        ?>
+    <!--    End Header-->
+        <?php
+            //check to see if user is visiting a page other than the home page
+            if (!isset($_GET['page'])){ ?>
+                <div class="banner"></div>
+            <?php }
+        ?>
+    <!--    Begin Main-->
+        <main>
+            <div class="maincontent col-md-8 col-sm-8">
+                <?php
+                    if(!isset($_GET['page'])){
+                        include ("home.php");
+                    }else{
+                        $page = $_GET['page'];
+                        include ("$page.php");
+                    }
+                ?>
             </div>
-        </div>
-    </main>
-<!--    End Main-->
-<!--    Begin Footer-->
-    <footer>
-
-    </footer>
-<!--    End Footer-->
+            <?php include("seccontent.php")?>
+        </main>
+    <!--    End Main-->
+    <!--    Begin Footer-->
+        <footer>
+            <div class="footer"></div>
+        </footer>
+    <!--    End Footer-->
+    </div>
 </body>
 </html>
