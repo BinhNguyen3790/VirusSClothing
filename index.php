@@ -24,12 +24,19 @@
 <body>
 <!--    Begin Header-->
     <header>
-
+        <h1>HELLO WORLD <i class="fa fa-shopping-cart"></i>buy me</h1>
     </header>
 <!--    End Header-->
 <!--    Begin Main-->
     <main>
-
+        <img src="images/bk.jpg" alt="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">1</div>
+                <div class="col-md-4">2</div>
+                <div class="col-md-4">3</div>
+            </div>
+        </div>
     </main>
 <!--    End Main-->
 <!--    Begin Footer-->

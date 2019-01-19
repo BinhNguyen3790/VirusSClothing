@@ -1,10 +1,32 @@
 @import url(DancingScript.css);
 body {
-  font-family: "Dancing Script", cursive !important; }
+  font-family: "Dancing Script", cursive !important;
+  background-color: #000 !important;
+  padding: 100px; }
+  body header {
+    background-color: red;
+    height: 100px; }
+  body main {
+    background-color: blue;
+    height: 1000px; }
+  body footer {
+    background-color: red;
+    height: 100px; }
 
 .container-fluid {
   padding: 0 !important; }
   .container-fluid .row {
     margin: 0 !important; }
+
+.container {
+  background-color: #0b2e13;
+  padding: 100px; }
+  .container .row {
+    background-color: purple;
+    padding: 10px; }
+    .container .row .col-md-4 {
+      background-color: yellow;
+      padding: 100px;
+      height: 100px; }
 
 /*# sourceMappingURL=styles.css.map */
