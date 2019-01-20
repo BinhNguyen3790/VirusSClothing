@@ -6,5 +6,5 @@
  * Time: 10:18 AM
  */
 
-$dbc = mysqli_connect("localhost", "root","", "virussclothing")
-    or die("connect database failed: " .mysqli_connect_error());
+    $dbc = mysqli_connect("localhost", "root","", "virussclothing")
+        or die("connect database failed: " .mysqli_connect_error());
