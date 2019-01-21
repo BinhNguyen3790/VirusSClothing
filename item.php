@@ -17,8 +17,9 @@
 
     if ($item_query = mysqli_query($dbc, $item_sql)){
         $item_rs = mysqli_fetch_assoc($item_query);?>
+        <p><img src="images/<?php echo $item_rs['bigphoto']?>" alt=""></p>
         <h1><?php echo $item_rs['name']; ?></h1>
-        <p>$<?php echo $item_rs['price']?></p>
+        <p>Pirce: $<?php echo $item_rs['price']?></p>
         <p><?php echo $item_rs['description']?></p>
     <?php }
 

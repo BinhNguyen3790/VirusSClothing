@@ -13,7 +13,7 @@
         header("Location: index.php");
     }
     // select all stock items brlonging to the selected categoryID
-    $stock_sql = "SELECT stock.stockID, stock.name, stock.price, category.name AS catname 
+    $stock_sql = "SELECT stock.stockID, stock.name, stock.price, stock.thumbnail, category.name AS catname 
       FROM stock JOIN category ON stock.categoryID=category.categoryID 
       WHERE stock.categoryID=".$_GET['categoryID'];
 
@@ -27,12 +27,13 @@
         <h1><?php echo $stock_rs['catname']; ?></h1>
         <?php
             do{?>
-                <div class="item">
-                    <a href="index.php?page=item&stockID=<?php echo $stock_rs['stockID']; ?>">
-                        <p><?php echo $stock_rs['name'];?></p>
-                        <p>$<?php echo $stock_rs['price'];?></p>
-                    </a>
-                </div>
+              <div class="item">
+                <a href="index.php?page=item&stockID=<?php echo $stock_rs['stockID']; ?>">
+                  <p><img src="images/<?php echo $stock_rs['thumbnail']; ?>" /></p>
+                  <p><?php echo $stock_rs['name']; ?></p>
+                  <p>Price: $<?php echo $stock_rs['price']; ?></p>
+                </a>
+              </div>
             <?php }while($stock_rs = mysqli_fetch_assoc($stock_query));
         ?>
     <?php }
