@@ -83,7 +83,7 @@
   }else{// the code below only run if no image is selected
       $_SESSION['addstock']['thumbnail'] = "noimage.jpg";
     ?>
-    <h1>Confirm item details</h1>
+    <h1>Confirm stock item details</h1>
     <p>Name: <?php echo $_SESSION['addstock']['name']?></p>
     <p>Thumbnail: <img src="images/<?php echo $_SESSION['addstock']['thumbnail']?>" width="100" height="150"></p>
     <p>Category:
@@ -100,4 +100,4 @@
   <?php }
 
 ?>
-<p><a href="index.php?page=enterstock">Confirm</a> | <a href="index.php?page=addstock">Go back</a> | <a href="index.php?page=admin">Back to admin</a></p>
+<p><a href="index.php?page=enterstock">Confirm</a> | <a href="index.php?page=addstock">Oops, Go back</a> | <a href="index.php?page=admin">Back to admin</a></p>

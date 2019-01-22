@@ -16,6 +16,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -31,15 +32,15 @@
             include ("header.php");
         ?>
     <!--    End Header-->
-        <?php
-            //check to see if user is visiting a page other than the home page
-            if (!isset($_GET['page'])){ ?>
-                <div class="banner"></div>
-            <?php }
-        ?>
     <!--    Begin Main-->
         <main>
-            <div class="maincontent col-md-8 col-sm-8">
+          <?php
+          //check to see if user is visiting a page other than the home page
+          if (!isset($_GET['page'])){
+            include ("slider.php");
+          }
+          ?>
+            <div class="maincontent col-md-8 col-sm-8" id="myList">
                 <?php
                     if(!isset($_GET['page'])){
                         include ("home.php");
@@ -54,7 +55,7 @@
     <!--    End Main-->
     <!--    Begin Footer-->
         <footer>
-            <div class="footer"></div>
+            <div class="footer text-center">all right reservered </div>
         </footer>
     <!--    End Footer-->
     </div>

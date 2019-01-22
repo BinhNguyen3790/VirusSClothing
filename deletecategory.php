@@ -6,8 +6,8 @@
  * Time: 10:58 AM
  */
 
+session_start();
   include ("dbconnect.php");
-  session_start();
 
   // check to see if user is logged in. if not, redirect to admin page
   if (!isset($_SESSION['admin'])){

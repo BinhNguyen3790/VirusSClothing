@@ -4,31 +4,40 @@
  * User: VirusS
  * Date: 19/01/2019
  * Time: 10:06 AM
- */?>
+ */
+
+include ("dbconnect.php");
+
+  $ct_sql = "SELECT * FROM category";
+  $ct_qry = mysqli_query($dbc, $ct_sql);
+  $ct_rs = mysqli_fetch_assoc($ct_qry);
+
+?>
 
 <div class="seccontent col-md-4 col-sm-4">
-    <table width="259" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <td width="80" valign="top" class="textheading">WHERE:</td>
-            <td width="179"><p>Merivale Mall</p>
-                <p>Christchurch</p></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td valign="top" class="textheading">WHEN:</td>
-            <td><p>M - F: 9am - 9pm</p>
-                <p>Sat - Sun: 10am - 5pm</p></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
+  <ul class="list-group p-5">
+    <li class="list-group-item align-items-center bg-primary">CATEGORY</li>
+    <?php
+    do {?>
+      <a href="index.php?page=category&categoryID=<?php echo $ct_rs['categoryID'];?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        <?php echo $ct_rs['name'] ?>
+      <span class="badge badge-primary badge-pill">
+        <?php
+          $st_sql = "SELECT COUNT('categoryID') AS categoryID FROM stock WHERE stock.categoryID=".$ct_rs['categoryID'];
+          $st_qry = mysqli_query($dbc, $st_sql);
+          $st_rs = mysqli_fetch_assoc($st_qry);
+          do{ ?>
+            <?php echo $st_rs['categoryID']; ?>
+          <?php }while($st_rs = mysqli_fetch_assoc($st_qry));
+        ?>
+      </span>
+    <?php }while($ct_rs = mysqli_fetch_assoc($ct_qry))
+    ?>
+    </a>
+  </ul>
 </div><!--End of secondary content-->
+
+
+
+
+

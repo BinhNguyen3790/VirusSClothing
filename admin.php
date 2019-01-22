@@ -6,8 +6,8 @@
  * Time: 7:38 PM
  */
 
+session_start();
     include("dbconnect.php");
-    session_start();
     // check to see if user is logging out
     if (isset($_GET['action'])){
         if ($_GET['action']=='logout'){

@@ -14,42 +14,39 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
-header .header {
-  height: 80px;
-  border-bottom-width: 1px;
-  border-bottom-color: #000;
-  border-bottom-style: solid; }
-  header .header .logo {
-    float: left; }
-    @media (max-width: 768px) {
-      header .header .logo img {
-        width: 100px;
-        padding: 19px 0; } }
-  header .header .navigation {
-    float: right;
-    margin-top: 55px; }
-    @media (max-width: 768px) {
-      header .header .navigation {
-        font-size: 13px; } }
-    header .header .navigation a:link {
-      text-decoration: none;
-      color: #000;
-      margin: 0px 10px 0px 10px; }
-    header .header .navigation a:visited {
-      text-decoration: none;
-      color: #000;
-      margin: 0px 10px 0px 10px; }
-    header .header .navigation a:hover {
-      text-decoration: underline;
-      color: #ff3835;
-      margin: 0px 10px 0px 10px; }
+nav img {
+  height: 30px; }
 
-.banner {
-  clear: both;
-  padding-top: 10px;
-  background-image: url("../images/banner.jpg");
-  background-size: 100% 100%;
-  height: 400px; }
+header {
+  padding: 29px; }
+  header .header {
+    height: 80px;
+    border-bottom-width: 1px;
+    border-bottom-color: #000;
+    border-bottom-style: solid; }
+    header .header .logo {
+      float: left; }
+      @media (max-width: 768px) {
+        header .header .logo img {
+          width: 100px;
+          padding: 19px 0; } }
+    header .header .navigation {
+      float: right;
+      margin-top: 55px; }
+      @media (max-width: 768px) {
+        header .header .navigation {
+          font-size: 13px; } }
+      header .header .navigation a:link {
+        text-decoration: none;
+        color: #000;
+        margin: 0px 10px 0px 10px; }
+      header .header .navigation a:visited {
+        text-decoration: none;
+        color: #000;
+        margin: 0px 10px 0px 10px; }
+      header .header .navigation a:hover {
+        color: #ff3835;
+        margin: 0px 10px 0px 10px; }
 
 main .maincontent {
   float: left;
@@ -111,5 +108,17 @@ h2 {
 
 .error {
   color: #ff0000; }
+
+.col-sm a .card {
+  width: 170px !important;
+  height: 250px !important;
+  margin-bottom: 10px !important; }
+  .col-sm a .card:hover {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); }
+.col-sm a:hover {
+  text-decoration: none;
+  color: #9c38ff; }
 
 /*# sourceMappingURL=styles.css.map */
