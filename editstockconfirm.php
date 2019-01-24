@@ -21,14 +21,10 @@
 
 ?>
 
-<h1>Update stock confirm</h1>
-<p>Update stock item name: <?php echo $_SESSION['editstock']['name']?></p>
-<p>Category: <?php echo $_SESSION['editstock']['categoryID']?></p>
-<p>Price: $<?php echo $_SESSION['editstock']['price']?></p>
-<p>Topline: <?php echo $_SESSION['editstock']['topline']?></p>
-<p>Description: <?php echo $_SESSION['editstock']['description']?></p>
-<p>
-  <a href="index.php?page=editstockupdate">Confirm</a> |
-  <a href="index.php?page=editstock">Oops, go back</a> |
-  <a href="index.php?page=cpanel">Back to admin panel</a>
-</p>
+<h1 class="text-danger">Update Stock Confirm</h1><br/>
+<h3><span class="text-danger">Update stock item name:</span> <?php echo $_SESSION['editstock']['name']?></h3><br/>
+<h3><span class="text-danger">Category:</span> <?php echo $_SESSION['editstock']['categoryID']?></h3><br/>
+<h3><span class="text-danger">Price:</span> $<?php echo $_SESSION['editstock']['price']?></h3><br/>
+<h3><span class="text-danger">Topline:</span> <?php echo $_SESSION['editstock']['topline']?></h3><br/>
+<h3><span class="text-danger">Description:</span> <?php echo $_SESSION['editstock']['description']?></h3><br/>
+<p><a class="btn btn-danger" href="index.php?page=editstock">Oops, go back</a> <a class="btn btn-success" href="index.php?page=editstockupdate">Correct, continue</a> </p>

@@ -22,6 +22,7 @@
 
 ?>
 
-<h1>Confirm category name</h1>
-<p>You entered: <?php echo $_POST['name']; ?></p>
-<p><a href="index.php?page=entercategory">Correct, continue</a> | <a href="index.php?page=addcategory">Oops, go back</a></p>
+<h1 class="text-danger">Confirm Category Name</h1><br/>
+<h3><span class="text-danger">Your Category Name: </span><?php echo $_POST['name']; ?></h3><br/>
+<p><a class="btn btn-danger" href="index.php?page=addcategory">Oops, go back</a> <a class="btn btn-success" href="index.php?page=entercategory">Correct, continue</a></p>
+

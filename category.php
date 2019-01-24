@@ -18,16 +18,16 @@
     $stock_rs = mysqli_fetch_assoc($stock_query);
   }
   if (mysqli_num_rows($stock_query)==0){
-    echo "Sorry, we have no items currently in stock";
+    echo "<script>alert('Sorry, we have no items currently in stock');window.location.href='index';</script>";
   }else { ?>
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php?page=category&categoryID=<?php echo $stock_rs['categoryID']; ?>">
-          <?php echo $stock_rs['catname']; ?>
-        </a>
-      </li>
-    </ul><br/>
-    <div class="container-fluid">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="index.php?page=category&categoryID=<?php echo $stock_rs['categoryID']; ?>">
+        <?php echo $stock_rs['catname']; ?>
+      </a>
+    </li>
+  </ul><br/>
+  <div class="container-fluid">
     <div class="row"> <?php do { ?>
       <div class="col-sm">
         <a href="index.php?page=item&stockID=<?php echo $stock_rs['stockID'] ?>">

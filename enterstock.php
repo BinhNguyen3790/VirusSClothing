@@ -29,5 +29,6 @@
 
 ?>
 
-<p>New stock item has been entered</p>
-<p><a href="index.php?page=admin">Back to admin</a></p>
+<h1 class="text-danger">Add Stock Item</h1><br/>
+<h3 class="text-danger">New stock has been entered</h3><br/>
+<p><a class="btn btn-success" href="index.php?page=admin">Return to admin panel</a></p>

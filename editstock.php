@@ -31,31 +31,53 @@
   }
 
 ?>
-
-<h1>Edit stock</h1>
-<form action="index.php?page=editstockconfirm" enctype="multipart/form-data" method="post">
-  <p>Stock item name: <input type="text" name="name" value="<?php echo $_SESSION['editstock']['name']?>"></p>
-  <p>Thumbnail image: <input type="file" name="fileToUpload" id="fileToUpload"></p>
-  <p>Category:
-    <select name="categoryID">
-      <?php
-        $ct_sql = "SELECT * FROM category";
-        $ct_qry = mysqli_query($dbc, $ct_sql);
-        $ct_rs = mysqli_fetch_assoc($ct_qry);
-        do{ ?>
-          <option value="<?php echo $ct_rs['categoryID']?>"
+<div class="maincontent">
+  <h1 class="text-danger">Edit Stock Item</h1><br/>
+  <form class="login-form" action="index.php?page=editstockconfirm" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-danger">Stock Item Name</label>
+      <input class="form-control" type="text" name="name" placeholder="Name" value="<?php echo $_SESSION['editstock']['name']?>" size="40" maxlength="50" required/>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-danger">Topline</label>
+      <input class="form-control" id="example-number-input" type="text" name="topline" value="<?php echo $_SESSION['editstock']['topline']?>" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-danger">Category</label>
+      <select class="form-control" id="exampleSelect1" name="categoryID">
+        <?php
+        $catlist_sql = "SELECT * FROM category";
+        $catlist_query = mysqli_query($dbc, $catlist_sql);
+        $catlist_rs = mysqli_fetch_assoc($catlist_query);
+        do{?>
+          <option value="<?php echo $catlist_rs['categoryID']?>"
             <?php
-              if ($ct_rs['categoryID']==$_SESSION['editstock']['categoryID']){
-                echo "selected=selected";
-              }
+            if ($catlist_rs['categoryID']==$_SESSION['editstock']['categoryID']){
+              echo "selected=selected";
+            }
             ?>
-          ><?php echo $ct_rs['name']?></option>
-        <?php }while($ct_rs = mysqli_fetch_assoc($ct_qry));
-      ?>
-    </select>
-  </p>
-  <p>Price: $<input type="number" name="price" value="<?php echo $_SESSION['editstock']['price']?>"></p>
-  <p>Topline: <input type="text" name="topline" value="<?php echo $_SESSION['editstock']['topline']?>"></p>
-  <p>Description: <textarea name="description" cols="30" rows="10"><?php echo $_SESSION['editstock']['description']?></textarea></p>
-  <input type="submit" name="upload" value="Update">
-</form>
+          >
+            <?php echo $catlist_rs['name']?>
+          </option>
+        <?php }while($catlist_rs = mysqli_fetch_assoc($catlist_query));
+        ?>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-danger">Price</label>
+      <input class="form-control" id="example-number-input" placeholder="$" type="number" name="price" value="<?php echo $_SESSION['editstock']['price']?>" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-danger">Thumbnail Image</label><br/>
+      <input type="file" name="fileToUpload" id="fileToUpload">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-danger">Description</label>
+      <textarea class="form-control" id="example-number-input"  name="description" cols="60" rows="5" required><?php echo $_SESSION['editstock']['description']?></textarea>
+    </div>
+    <div class="form-check">
+      <input class="btn btn-login float-right btn-success" type="submit" name="upload" value="Update">
+    </div>
+  </form>
+  <p class="float-right pr-1"><a class="btn btn-danger" href="index.php?page=editstockselect">Oops, go back</a></p>
+</div>

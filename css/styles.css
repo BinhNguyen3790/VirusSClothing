@@ -204,7 +204,7 @@ section {
         font-weight: 600; }
   .maincontent .item img {
     padding: 20px;
-    min-width: 380px; }
+    width: 380px; }
   .maincontent .item .price {
     font-weight: bold; }
 

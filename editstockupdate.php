@@ -26,7 +26,6 @@
   unset($_SESSION['editstock']);
 ?>
 
-<h1>Edit stock</h1>
-<p>stock successfully updated</p>
-<p><a href="index.php?page=admin">Back to admin panel</a></p>
-
+<h1 class="text-danger">Edit Stock</h1><br/>
+<h3 class="text-danger">stock item successfully updated</h3><br/>
+<p><a class="btn btn-success" href="index.php?page=admin">Return to admin panel</a></p>

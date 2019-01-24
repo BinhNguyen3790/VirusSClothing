@@ -27,7 +27,7 @@
         <a href="index.php?page=about" class="nav-link">About</a>
       </li>
       <li class="nav-item">
-        <a href="index.php?page=admin" class="nav-link">Admin</a>
+        <a href="index.php?page=admin" class="nav-link">Login</a>
       </li>
     </ul>
     <form class="form-inline">

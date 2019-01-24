@@ -21,6 +21,6 @@
 
 ?>
 
-<h1>Edit category</h1>
-<p>Category successfully update</p>
-<p><a href="index.php?page=admin">Back to admin panel</a></p>
+<h1 class="text-danger">Edit Category</h1><br/>
+<h3 class="text-danger">Category successfully update</h3><br/>
+<p><a class="btn btn-success" href="index.php?page=admin">Return to admin panel</a></p>

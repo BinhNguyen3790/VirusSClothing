@@ -26,11 +26,11 @@
 
 ?>
 
-<h1>Confirm stock item to delete</h1>
-<p><img src="images/<?php echo $st_rs['thumbnail']?>" alt=""></p>
-<p>Item to be delete is: <?php echo $st_rs['name']?></p>
-<p>Category: <?php echo $st_rs['catname']?></p>
-<p>Price: $<?php echo $st_rs['price']?></p>
-<p>Topline: <?php echo $st_rs['topline']?></p>
-<p>Description: <?php echo $st_rs['description']?></p>
-<p><a href="index.php?page=deletestockselect">Oops, Go back</a> | <a href="index.php?page=deletestock&stockID=<?php echo $_GET['stockID']?>">Delete</a> | <a href="index.php?page=cpanel">Back to admin panel</a></p>
+<h1 class="text-danger">Confirm Stock Item To Delete</h1><br/>
+<p><img src="images/<?php echo $st_rs['thumbnail']?>" alt=""></p><br/>
+<h3><span class="text-danger">Item to be delete is:</span> <?php echo $st_rs['name']?></h3><br/>
+<h3><span class="text-danger">Category:</span> <?php echo $st_rs['catname']?></h3><br/>
+<h3><span class="text-danger">Price:</span> $<?php echo $st_rs['price']?></h3><br/>
+<h3><span class="text-danger">Topline:</span> <?php echo $st_rs['topline']?></h3><br/>
+<h3><span class="text-danger">Description:</span> <?php echo $st_rs['description']?></h3><br/>
+<p><a class="btn btn-danger" href="index.php?page=deletestockselect">Oops, Go back</a> <a class="btn btn-success" href="index.php?page=deletestock&stockID=<?php echo $_GET['stockID']?>">Delete</a></p>

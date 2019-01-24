@@ -22,9 +22,14 @@
 
 ?>
 
-<h1>Edit category</h1>
+<h1 class="text-danger">Edit Category</h1><br/>
 <?php
   do{ ?>
-    <p><a href="index.php?page=editcategory&categoryID=<?php echo $editcat_rs['categoryID']; ?>"><?php echo $editcat_rs['name']; ?></a></p>
+    <ul class="nav justify-content-center">
+      <li class="nav-item"
+        <p><a class="nav-link" href="index.php?page=editcategory&categoryID=<?php echo $editcat_rs['categoryID']; ?>"><?php echo $editcat_rs['name']; ?></a></p>
+      </li>
+    </ul><br/>
   <?php }while($editcat_rs = mysqli_fetch_assoc($editcat_query))
 ?>
+<p class="float-right"><a class="btn btn-danger" href="index.php?page=admin">Back to admin panel</a></p><br/>

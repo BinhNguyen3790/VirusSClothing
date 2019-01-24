@@ -26,8 +26,14 @@
 
 ?>
 
-<h1>Edit category</h1>
-<form method="post" action="index.php?page=editcategoryconfirm">
-  <input name="name" value="<?php echo $_SESSION['editcategory']['name']; ?>">
-  <input type="submit" name="update" value="Update">
+<h1 class="text-danger">Edit Category</h1><br/>
+<form class="login-form" action="index.php?page=editcategoryconfirm" method="post" name="login">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-danger">Name</label>
+    <input class="form-control" type="text" name="name" value="<?php echo $_SESSION['editcategory']['name']; ?>" size="40" maxlength="50" required/>
+  </div>
+  <div class="form-check">
+    <input class="btn btn-login float-right btn-success" type="submit" name="update" value="Update">
+  </div>
 </form>
+<p class="float-right pr-1"><a class="btn btn-danger" href="index.php?page=editcategoryselect">Oops, go back</a></p>

@@ -18,6 +18,6 @@
 
 ?>
 
-<h1>Edit category</h1>
-<p>Update category name: <?php echo $_SESSION['editcategory']['name']; ?></p>
-<p><a href="index.php?page=editcategoryupdate">Confirm</a> | <a href="index.php?page=editcategory">Oops, go back</a> | <a href="index.php?page=admin">Back to admin page</a></p>
+<h1 class="text-danger" xmlns="http://www.w3.org/1999/html">Confirm Edit Category</h1><br/>
+<h3><span class="text-danger">Update category name:</span> <?php echo $_SESSION['editcategory']['name']; ?></h3><br/>
+<p><a class="btn btn-danger" href="index.php?page=editcategory">Oops, go back</a> <a class="btn btn-success" href="index.php?page=editcategoryupdate">Correct, continue</a> </p>

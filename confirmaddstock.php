@@ -62,20 +62,20 @@
     // if everything is ok, try to upload file
     } else {
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) { ?>
-        <h1>Confirm item details</h1>
-        <p>Name: <?php echo $_SESSION['addstock']['name']?></p>
-        <p>Thumbnail: <img src="images/<?php echo $_SESSION['addstock']['thumbnail']?>" width="100" height="150"></p>
-        <p>Category:
+        <h1 class="text-danger">Confirm Stock Item Details</h1><br/>
+        <h3><span class="text-danger">Name:</span> <?php echo $_SESSION['addstock']['name']?></h3><br/>
+        <h3><span class="text-danger">Thumbnail:</span> <img src="images/<?php echo $_SESSION['addstock']['thumbnail']?>" width="100" height="150"></h3><br/>
+        <h3><span class="text-danger">Category:</span>
           <?php
             $catname_sql = "SELECT name FROM category WHERE categoryID=".$_SESSION['addstock']['categoryID'];
             $catname_query = mysqli_query($dbc, $catname_sql);
             $catname_rs = mysqli_fetch_assoc($catname_query);
             echo $catname_rs['name'];
           ?>
-        </p>
-        <p>Price: $<?php echo $_SESSION['addstock']['price']?></p>
-        <p>Topline: <?php echo $_SESSION['addstock']['topline']?></p>
-        <p>Description: <?php echo $_SESSION['addstock']['description']?></p>
+        </h3><br/>
+        <h3><span class="text-danger">Price:</span> $<?php echo $_SESSION['addstock']['price']?></h3><br/>
+        <h3><span class="text-danger">Topline:</span> <?php echo $_SESSION['addstock']['topline']?></h3><br/>
+        <h3><span class="text-danger">Description:</span> <?php echo $_SESSION['addstock']['description']?></h3><br/>
       <?php } else {
         echo "Sorry, there was an error uploading your file.";
       }
@@ -83,21 +83,20 @@
   }else{// the code below only run if no image is selected
       $_SESSION['addstock']['thumbnail'] = "noimage.jpg";
     ?>
-    <h1>Confirm stock item details</h1>
-    <p>Name: <?php echo $_SESSION['addstock']['name']?></p>
-    <p>Thumbnail: <img src="images/<?php echo $_SESSION['addstock']['thumbnail']?>" width="100" height="150"></p>
-    <p>Category:
+    <h1 class="text-danger">Confirm Stock Item Details</h1><br/>
+    <h3><span class="text-danger">Name:</span> <?php echo $_SESSION['addstock']['name']?></h3><br/>
+    <h3><span class="text-danger">Thumbnail:</span> <img src="images/<?php echo $_SESSION['addstock']['thumbnail']?>" width="100" height="150"></h3><br/>
+    <h3><span class="text-danger">Category:</span>
       <?php
       $catname_sql = "SELECT name FROM category WHERE categoryID=".$_SESSION['addstock']['categoryID'];
       $catname_query = mysqli_query($dbc, $catname_sql);
       $catname_rs = mysqli_fetch_assoc($catname_query);
       echo $catname_rs['name'];
       ?>
-    </p>
-    <p>Price: $<?php echo $_SESSION['addstock']['price']?></p>
-    <p>Topline: <?php echo $_SESSION['addstock']['topline']?></p>
-    <p>Description: <?php echo $_SESSION['addstock']['description']?></p>
+    </h3><br/>
+    <h3><span class="text-danger">Price:</span> $<?php echo $_SESSION['addstock']['price']?></h3><br/>
+    <h3><span class="text-danger">Topline:</span> <?php echo $_SESSION['addstock']['topline']?></h3><br/>
+    <h3><span class="text-danger">Description:</span> <?php echo $_SESSION['addstock']['description']?></h3><br/>
   <?php }
-
 ?>
-<p><a href="index.php?page=enterstock">Confirm</a> | <a href="index.php?page=addstock">Oops, Go back</a> | <a href="index.php?page=admin">Back to admin</a></p>
+<p><a class="btn btn-danger" href="index.php?page=addstock">Oops, Go back</a> <a class="btn btn-success" href="index.php?page=enterstock">Correct, continue</a></p>

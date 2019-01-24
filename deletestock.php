@@ -25,6 +25,6 @@
   unset($_SESSION['deletestock']);
 
 ?>
-
-<p>Stock item is deleted</p>
-<p><a href="index.php?page=cpanel">Back to admin panel</a></p>
+<h1 class="text-danger">Stock Item Deleted</h1><br/>
+<h3 class="text-danger">Stock item has successfully been delete</h3><br/>
+<p><a class="btn btn-success" href="index.php?page=admin">Return to admin panel</a></p>

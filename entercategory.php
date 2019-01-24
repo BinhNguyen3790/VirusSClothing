@@ -24,8 +24,8 @@
     unset($_SESSION['addcategory']['name']);
 
 ?>
-
-<p>new category has been entered</p>
-<p><a href="index.php?page=admin">Return to admin panel</a></p>
+<h1 class="text-danger">Add Category</h1><br/>
+<h3 class="text-danger">New category has been entered</h3><br/>
+<p><a class="btn btn-success" href="index.php?page=admin">Return to admin panel</a></p>
 
 

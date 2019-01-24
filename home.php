@@ -13,7 +13,7 @@
   $st_qry = mysqli_query($dbc, $st_sql);
   $st_rs = mysqli_fetch_assoc($st_qry);
 ?>
-<ul class="nav justify-content-center">
+<ul class="nav justify-content-center bg-danger">
   <?php
     do{ ?>
       <li class="nav-item">

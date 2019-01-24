@@ -21,6 +21,6 @@ session_start();
   $delstock_query = mysqli_query($dbc, $delstock_sql);
 
 ?>
-<h1>Category deleted</h1>
-<p>Category has successfully been delete</p>
-<p><a href="index.php?page=admin">Return to admin panel</a></p>
+<h1 class="text-danger">Category Deleted</h1><br/>
+<h3 class="text-danger">Category has successfully been delete</h3><br/>
+<p><a class="btn btn-success" href="index.php?page=admin">Return to admin panel</a></p>

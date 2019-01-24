@@ -17,8 +17,14 @@
     $_SESSION['addcategory']['name'] = "";
   }
 ?>
-<h1>add new category</h1>
-<form action="index.php?page=confirmcategory" method="post">
-  <p>Name: <input type="text" name="name" value="<?php echo $_SESSION['addcategory']['name'] ?>" size="40" maxlength="50"></p>
-  <p><input type="submit" name="submit" value="Add category"></p>
+<h1 class="text-danger">Add New Category</h1><br/>
+<form class="login-form" action="index.php?page=confirmcategory" method="post" name="login">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-danger">Name</label>
+    <input class="form-control" type="text" name="name" value="<?php echo $_SESSION['addcategory']['name'] ?>" size="40" maxlength="50" required/>
+  </div>
+  <div class="form-check">
+    <input class="btn btn-login float-right btn-success" type="submit" name="submit" value="Add category">
+  </div>
 </form>
+<p class="float-right pr-1"><a class="btn btn-danger" href="index.php?page=admin">Back to admin panel</a></p>

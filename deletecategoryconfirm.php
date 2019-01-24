@@ -15,7 +15,7 @@ session_start();
   }
 
 ?>
-<h1>Confirm category to delete</h1>
+<h1 class="text-danger">Confirm Category To Delete</h1><br/>
 <?php
   $delcat_sql = "SELECT * FROM category WHERE categoryID=".$_GET['categoryID'];
   $delcat_query = mysqli_query($dbc, $delcat_sql);
@@ -28,15 +28,16 @@ session_start();
 
 ?>
 
-<p><?php
+<h3><?php
   if ($count>0){
-    echo "Warning! there are: ".$count." stock item(s) in this category. 
-    If you delete the category they will also be removed frm the database";
+    echo "<span class='text-danger'>Warning!</span> there are: <span class='text-danger'>".$count." stock item(s)</span> in this category. 
+    If you delete the category they will also be removed from the database";
   }
-?></p>
-<p><?php echo "Do you really wish to delete ".$delcat_rs['name']."?"; ?></p>
+?></h3><br/>
+<h3><?php echo "<span class=\"text-danger\">Do you really wish to delete </span>".$delcat_rs['name']."?"; ?></h3><br/>
 <p>
-  <a href="index.php?page=deletecategory&categoryID=<?php echo $_GET['categoryID'];?>">Yes, delete it!</a> |
-  <a href="index.php?page=deletecategoryselect">No, go back</a> |
-  <a href="index.php?page=admin">Back to admin panel</a>
+  <a class="btn btn-danger" href="index.php?page=deletecategoryselect">No, go back</a>
+  <a class="btn btn-success" href="index.php?page=deletecategory&categoryID=<?php echo $_GET['categoryID'];?>">Yes, delete it!</a>
 </p>
+
+
